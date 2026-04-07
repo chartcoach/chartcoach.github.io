@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark" class="astro-zcaypgoz"> <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Embed essential context directly in the chart | Structured visualization design knowledge</title><link rel="canonical" href="http://localhost:4321/guidelines/embed-essential-context-directly-in-the-chart/"/><link rel="sitemap" href="/sitemap-index.xml"/><link rel="shortcut icon" href="/brand/chartcoach-favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v6.1.2"/><meta name="generator" content="Starlight v0.38.2"/><meta property="og:title" content="Embed essential context directly in the chart"/><meta property="og:type" content="article"/><meta property="og:url" content="http://localhost:4321/guidelines/embed-essential-context-directly-in-the-chart/"/><meta property="og:locale" content="en"/><meta property="og:description" content="For distribution outside the original context, use text annotation on charts to prevent misinterpretation and address missing surrounding explanation for readers encountering shared graphics on their own."/><meta property="og:site_name" content="Structured visualization design knowledge"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="For distribution outside the original context, use text annotation on charts to prevent misinterpretation and address missing surrounding explanation for readers encountering shared graphics on their own."/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-iwjtxneg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg><svg aria-hidden="true" class="dark astro-iwjtxneg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg><svg aria-hidden="true" class="auto astro-iwjtxneg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg></template><link rel="stylesheet" href="/_astro/print.DNXP8c50.css" media="print"><link rel="stylesheet" href="/_astro/middleware.4Yx38L9C.css"><script type="module" src="/_astro/page.BIhdncjw.js"></script></head> <body class="astro-zcaypgoz"> <a href="#_top" class="astro-5hqhev35">Skip to content</a> <div class="page sl-flex astro-fajc47il"> <header class="header astro-fajc47il"><div class="grid min-h-full content-center"> <div class="grid min-w-0 grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-[0.6rem] lg:grid-cols-[auto_minmax(0,1fr)_auto_auto] lg:gap-x-[0.95rem]"> <div class="min-w-0"> <a href="/" class="site-title astro-oijwx5iz" data-site-title aria-label="Structured visualization design knowledge"> <span class="sr-only astro-oijwx5iz">Structured visualization design knowledge</span> <span class="site-title__mark astro-oijwx5iz" aria-hidden="true"> <span aria-hidden="true" style="display:block;line-height:0;width:2.3rem"><svg xmlns="http://www.w3.org/2000/svg" id="cc-site-title-mark-svg" viewBox="0 0 100 100" fill="none" aria-hidden="true" role="presentation" preserveAspectRatio="xMidYMid meet" style="display:block;width:100%;height:auto"><rect x="10" y="20" width="80" height="16" rx="3" fill="var(--cc-mark-strong, var(--cc-brand-high, #202c52))" data-cc-block="1" data-start-x="10" data-start-y="10" data-start-width="40" data-start-height="15" data-start-rx="1" data-end-x="10" data-end-y="20" data-end-width="80" data-end-height="16" data-end-rx="3"></rect><rect x="10" y="20" width="80" height="16" rx="3" fill="var(--cc-mark-strong, var(--cc-brand-high, #202c52))" data-cc-block="2" data-start-x="54" data-start-y="10" data-start-width="36" data-start-height="15" data-start-rx="1" data-end-x="10" data-end-y="20" data-end-width="80" data-end-height="16" data-end-rx="3"></rect><rect x="10" y="20" width="80" height="16" rx="3" fill="var(--cc-mark-strong, var(--cc-brand-high, #202c52))" data-cc-block="3" data-start-x="10" data-start-y="29" data-start-width="80" data-start-height="9" data-start-rx="1" data-end-x="10" data-end-y="20" data-end-width="80" data-end-height="16" data-end-rx="3"></rect><rect x="10" y="42" width="38" height="16" rx="3" fill="var(--cc-mark-mid, var(--cc-brand, #546cdf))" data-cc-block="4" data-start-x="10" data-start-y="42" data-start-width="20" data-start-height="16" data-start-rx="1" data-end-x="10" data-end-y="42" data-end-width="38" data-end-height="16" data-end-rx="3"></rect><rect x="10" y="42" width="38" height="16" rx="3" fill="var(--cc-mark-mid, var(--cc-brand, #546cdf))" data-cc-block="5" data-start-x="34" data-start-y="42" data-start-width="14" data-start-height="16" data-start-rx="1" data-end-x="10" data-end-y="42" data-end-width="38" data-end-height="16" data-end-rx="3"></rect><rect x="52" y="42" width="38" height="16" rx="3" fill="var(--cc-mark-soft, var(--cc-brand-ink, #8c9eff))" data-cc-block="6" data-start-x="52" data-start-y="42" data-start-width="38" data-start-height="16" data-start-rx="1" data-end-x="52" data-end-y="42" data-end-width="38" data-end-height="16" data-end-rx="3"></rect><rect x="10" y="64" width="80" height="10" rx="2" fill="var(--cc-mark-faint, var(--ccui-border, #d2dcf7))" data-cc-block="7" data-start-x="10" data-start-y="62" data-start-width="50" data-start-height="28" data-start-rx="1" data-end-x="10" data-end-y="64" data-end-width="80" data-end-height="10" data-end-rx="2"></rect><rect x="10" y="64" width="80" height="10" rx="2" fill="var(--cc-mark-faint, var(--ccui-border, #d2dcf7))" data-cc-block="8" data-start-x="64" data-start-y="62" data-start-width="26" data-start-height="28" data-start-rx="1" data-end-x="10" data-end-y="64" data-end-width="80" data-end-height="10" data-end-rx="2"></rect></svg></span> </span> </a> <script>
+  const TITLE_ANIMATION_DURATION = 720;
+
+  const easeInOutCubic = (value) =>
+    value < 0.5 ? 4 * value * value * value : 1 - Math.pow(-2 * value + 2, 3) / 2;
+
+  const attributes = ["x", "y", "width", "height", "rx"];
+
+  const stateDatasetKey = (prefix, attribute) =>
+    `${prefix}${attribute.charAt(0).toUpperCase()}${attribute.slice(1)}`;
+
+  const readState = (rect, prefix) =>
+    Object.fromEntries(
+      attributes.map((attribute) => [attribute, Number.parseFloat(rect.dataset[stateDatasetKey(prefix, attribute)])]),
+    );
+
+  const readCurrentState = (rect) =>
+    Object.fromEntries(
+      attributes.map((attribute) => [attribute, Number.parseFloat(rect.getAttribute(attribute) ?? "0")]),
+    );
+
+  const applyState = (rect, state) => {
+    attributes.forEach((attribute) => {
+      rect.setAttribute(attribute, String(state[attribute]));
+    });
+  };
+
+  const interpolate = (from, to, progress) =>
+    Object.fromEntries(
+      attributes.map((attribute) => [attribute, from[attribute] + (to[attribute] - from[attribute]) * progress]),
+    );
+
+  document.querySelectorAll("[data-site-title]").forEach((link) => {
+    const rects = Array.from(link.querySelectorAll("#cc-site-title-mark-svg rect[data-cc-block]"));
+    if (rects.length === 0) return;
+
+    let frameId = 0;
+    let animationToken = 0;
+
+    const cancelAnimation = () => {
+      animationToken += 1;
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+        frameId = 0;
+      }
+    };
+
+    const setState = (prefix) => {
+      cancelAnimation();
+      rects.forEach((rect) => applyState(rect, readState(rect, prefix)));
+      link.dataset.state = prefix === "start" ? "unstructured" : "structured";
+    };
+
+    const animateTo = (prefix) => {
+      cancelAnimation();
+      const token = animationToken;
+      const startTime = performance.now();
+      const fromStates = rects.map((rect) => readCurrentState(rect));
+      const toStates = rects.map((rect) => readState(rect, prefix));
+      const phaseName = prefix === "start" ? "entering" : "releasing";
+      const settledName = prefix === "start" ? "unstructured" : "structured";
+
+      const step = (now) => {
+        if (token !== animationToken) return;
+        const elapsed = Math.min(1, (now - startTime) / TITLE_ANIMATION_DURATION);
+        const eased = easeInOutCubic(elapsed);
+
+        rects.forEach((rect, index) => {
+          applyState(rect, interpolate(fromStates[index], toStates[index], eased));
+        });
+
+        if (elapsed < 1) {
+          frameId = requestAnimationFrame(step);
+        } else {
+          frameId = 0;
+          link.dataset.state = settledName;
+        }
+      };
+
+      link.dataset.state = phaseName;
+      frameId = requestAnimationFrame(step);
+    };
+
+    const activate = () => {
+      if (link.dataset.state === "entering" || link.dataset.state === "unstructured") return;
+      animateTo("start");
+    };
+
+    const release = () => {
+      requestAnimationFrame(() => {
+        if (link.matches(":hover") || link.matches(":focus-within")) return;
+        if (link.dataset.state === "releasing" || link.dataset.state === "structured") return;
+        animateTo("end");
+      });
+    };
+
+    setState("end");
+
+    link.addEventListener("pointerenter", activate);
+    link.addEventListener("pointerleave", release);
+    link.addEventListener("focusin", activate);
+    link.addEventListener("focusout", release);
+  });
+</script> </div> <nav class="hidden min-w-0 items-center gap-[0.28rem] lg:flex lg:justify-start" aria-label="Primary" data-site-header-nav> <a class="relative inline-flex min-h-[1.95rem] items-center px-[0.68rem] py-[0.24rem] font-sans text-[0.78rem] font-semibold leading-none tracking-[-0.01em] no-underline transition-colors lg:text-[0.82rem] text-muted-foreground" href="/" data-header-link> Overview </a><a class="relative inline-flex min-h-[1.95rem] items-center px-[0.68rem] py-[0.24rem] font-sans text-[0.78rem] font-semibold leading-none tracking-[-0.01em] no-underline transition-colors lg:text-[0.82rem] text-brand-high" href="/guidelines/" aria-current="page" data-header-link> Guidelines </a><a class="relative inline-flex min-h-[1.95rem] items-center px-[0.68rem] py-[0.24rem] font-sans text-[0.78rem] font-semibold leading-none tracking-[-0.01em] no-underline transition-colors lg:text-[0.82rem] text-muted-foreground" href="/catalog/" data-header-link> Catalog </a><a class="relative inline-flex min-h-[1.95rem] items-center px-[0.68rem] py-[0.24rem] font-sans text-[0.78rem] font-semibold leading-none tracking-[-0.01em] no-underline transition-colors lg:text-[0.82rem] text-muted-foreground" href="/labels/" data-header-link> Labels </a> </nav> <div class="flex min-w-max justify-end justify-self-end" data-site-header-search> <site-search class=" astro-zxfolx4h" data-translations="{&#34;placeholder&#34;:&#34;Search&#34;}"> <button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-zxfolx4h"> <svg aria-hidden="true" class="astro-zxfolx4h astro-iwjtxneg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg> <span class="sl-hidden md:sl-block astro-zxfolx4h" aria-hidden="true">Search</span> <kbd class="sl-hidden md:sl-flex astro-zxfolx4h" style="display: none;"> <kbd class="astro-zxfolx4h">Ctrl</kbd><kbd class="astro-zxfolx4h">K</kbd> </kbd> </button> <dialog style="padding:0" aria-label="Search" class="astro-zxfolx4h"> <div class="dialog-frame sl-flex astro-zxfolx4h">  <button data-close-modal class="sl-flex md:sl-hidden astro-zxfolx4h"> Cancel </button> <div class="search-container astro-zxfolx4h"> <div id="starlight__search" class="astro-zxfolx4h"></div> </div> </div> </dialog> </site-search>  <script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script> <script type="module" src="/_astro/Search.astro_astro_type_script_index_0_lang.BdDgbKxW.js"></script>  </div> <div class="hidden items-center lg:flex" data-site-header-controls> <div class="social-icons flex items-center gap-3" data-site-header-social> <a href="http://github.com/peter-gy/chartcoach" rel="me" class="sl-flex astro-tvmig7ki"><span class="sr-only astro-tvmig7ki">GitHub</span><svg aria-hidden="true" class="astro-tvmig7ki astro-iwjtxneg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a> </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-enuzswa7"> <span class="sr-only astro-enuzswa7">Select theme</span> <svg aria-hidden="true" class="icon label-icon astro-enuzswa7 astro-iwjtxneg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> <select autocomplete="off" class="astro-enuzswa7"> <option value="dark" class="astro-enuzswa7">Dark</option><option value="light" class="astro-enuzswa7">Light</option><option value="auto" selected class="astro-enuzswa7">Auto</option> </select> <svg aria-hidden="true" class="icon caret astro-enuzswa7 astro-iwjtxneg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg> </label> </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script> <script type="module">const r="starlight-theme",o=e=>e==="auto"||e==="dark"||e==="light"?e:"auto",c=()=>o(typeof localStorage<"u"&&localStorage.getItem(r));function n(e){typeof localStorage<"u"&&localStorage.setItem(r,e==="light"||e==="dark"?e:"")}const l=()=>matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";function t(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e==="auto"?l():e,n(e)}matchMedia("(prefers-color-scheme: light)").addEventListener("change",()=>{c()==="auto"&&t("auto")});class s extends HTMLElement{constructor(){super(),t(c()),this.querySelector("select")?.addEventListener("change",a=>{a.currentTarget instanceof HTMLSelectElement&&t(o(a.currentTarget.value))})}}customElements.define("starlight-theme-select",s);</script> </div> <details class="m-0 justify-self-end lg:hidden" data-mobile-menu> <summary class="inline-flex size-[2.15rem] items-center justify-center rounded-none border border-control-border bg-control text-muted-foreground transition-colors focus-visible:border-control-border focus-visible:bg-surface-strong focus-visible:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring/30" aria-controls="cc-mobile-menu-panel" aria-expanded="false" aria-labelledby="cc-mobile-menu-toggle-label" data-mobile-menu-toggle> <span class="sr-only" id="cc-mobile-menu-toggle-label">Open primary menu</span> <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-mobile-menu-icon="open" aria-hidden="true" focusable="false" class="lucide lucide-menu size-4"> <path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path>  </svg> <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-mobile-menu-icon="close" aria-hidden="true" focusable="false" class="lucide lucide-x size-4"> <path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>  </svg> </summary> <div class="fixed inset-x-0 top-[var(--sl-nav-height)] z-[var(--sl-z-index-menu)] grid gap-[0.85rem] border-t border-border bg-background px-4 py-4 shadow-popover" id="cc-mobile-menu-panel"> <nav class="grid gap-[0.2rem]" aria-label="Primary mobile"> <a class="flex min-h-9 items-center rounded-none border border-transparent px-[0.6rem] py-[0.45rem] font-sans text-[0.9rem] font-semibold no-underline transition-colors text-muted-foreground hover:border-control-border hover:bg-surface-strong hover:text-foreground focus-visible:border-control-border focus-visible:bg-surface-strong focus-visible:text-foreground" href="/"> Overview </a><a class="flex min-h-9 items-center rounded-none border border-transparent px-[0.6rem] py-[0.45rem] font-sans text-[0.9rem] font-semibold no-underline transition-colors border-control-border bg-surface text-brand-high" href="/guidelines/" aria-current="page"> Guidelines </a><a class="flex min-h-9 items-center rounded-none border border-transparent px-[0.6rem] py-[0.45rem] font-sans text-[0.9rem] font-semibold no-underline transition-colors text-muted-foreground hover:border-control-border hover:bg-surface-strong hover:text-foreground focus-visible:border-control-border focus-visible:bg-surface-strong focus-visible:text-foreground" href="/catalog/"> Catalog </a><a class="flex min-h-9 items-center rounded-none border border-transparent px-[0.6rem] py-[0.45rem] font-sans text-[0.9rem] font-semibold no-underline transition-colors text-muted-foreground hover:border-control-border hover:bg-surface-strong hover:text-foreground focus-visible:border-control-border focus-visible:bg-surface-strong focus-visible:text-foreground" href="/labels/"> Labels </a> </nav> <div class="flex items-center justify-end gap-[0.9rem] border-t border-border pt-[0.55rem]"> <div class="social-icons flex min-h-[2.2rem] items-center gap-3" data-mobile-menu-social> <a href="http://github.com/peter-gy/chartcoach" rel="me" class="sl-flex astro-tvmig7ki"><span class="sr-only astro-tvmig7ki">GitHub</span><svg aria-hidden="true" class="astro-tvmig7ki astro-iwjtxneg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a> </div> <div class="flex min-h-[2.2rem] items-center"> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-enuzswa7"> <span class="sr-only astro-enuzswa7">Select theme</span> <svg aria-hidden="true" class="icon label-icon astro-enuzswa7 astro-iwjtxneg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> <select autocomplete="off" class="astro-enuzswa7"> <option value="dark" class="astro-enuzswa7">Dark</option><option value="light" class="astro-enuzswa7">Light</option><option value="auto" selected class="astro-enuzswa7">Auto</option> </select> <svg aria-hidden="true" class="icon caret astro-enuzswa7 astro-iwjtxneg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg> </label> </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script>  </div> </div> </div> </details> </div> </div> <script>
+	document.querySelectorAll("[data-mobile-menu]").forEach((details) => {
+		const summary = details.querySelector("summary");
+		const summaryLabel = details.querySelector("#cc-mobile-menu-toggle-label");
+		const syncMenuState = () => {
+			if (!(summary instanceof HTMLElement)) return;
+			summary.setAttribute("aria-expanded", details.open ? "true" : "false");
+			if (summaryLabel instanceof HTMLElement) {
+				summaryLabel.textContent = details.open ? "Close primary menu" : "Open primary menu";
+			}
+		};
+		const closeMenu = () => {
+			details.open = false;
+		};
+
+		syncMenuState();
+		details.addEventListener("toggle", syncMenuState);
+
+		details.querySelectorAll("a").forEach((link) => {
+			link.addEventListener("click", closeMenu);
+		});
+
+		window.addEventListener("click", (event) => {
+			if (details.open && !details.contains(event.target)) closeMenu();
+		});
+
+		window.addEventListener("keydown", (event) => {
+			if (event.key === "Escape" && details.open) {
+				const hadFocus = details.contains(document.activeElement);
+				closeMenu();
+				if (hadFocus && summary instanceof HTMLElement) summary.focus();
+			}
+		});
+	});
+</script></header>  <div class="main-frame astro-fajc47il">  <script type="module">const a=document.getElementById("starlight__sidebar"),n=a?.querySelector("sl-sidebar-state-persist"),o="sl-sidebar-state",i=()=>{let t=[];const e=n?.dataset.hash||"";try{const s=sessionStorage.getItem(o),r=JSON.parse(s||"{}");Array.isArray(r.open)&&r.hash===e&&(t=r.open)}catch{}return{hash:e,open:t,scroll:a?.scrollTop||0}},c=t=>{try{sessionStorage.setItem(o,JSON.stringify(t))}catch{}},d=()=>c(i()),l=(t,e)=>{const s=i();s.open[e]=t,c(s)};n?.addEventListener("click",t=>{if(!(t.target instanceof Element))return;const e=t.target.closest("summary")?.closest("details");if(!e)return;const s=e.querySelector("sl-sidebar-restore"),r=parseInt(s?.dataset.index||"");isNaN(r)||l(!e.open,r)});addEventListener("visibilitychange",()=>{document.visibilityState==="hidden"&&d()});addEventListener("pageHide",d);</script> <div class="lg:sl-flex astro-fisjhdjz">  <div class="main-pane astro-fisjhdjz">  <main data-pagefind-body class="astro-zcaypgoz" lang="en" dir="ltr">    <div class="content-panel astro-bzthiloz"> <div class="sl-container astro-bzthiloz"> <h1 id="_top" class="astro-ylah5twu">Embed essential context directly in the chart</h1> </div> </div> <div class="content-panel astro-bzthiloz"> <div class="sl-container astro-bzthiloz"> <div class="sl-markdown-content">  <div class="mx-auto w-full max-w-[66rem] pt-4" data-guideline-detail-page> <div class="mx-auto grid w-full max-w-[62rem] gap-[0.85rem]"> <div class="grid gap-1"> <h1 class="m-0 text-balance font-display text-[clamp(1.45rem,2.7vw,1.95rem)] font-semibold leading-[1.06] tracking-[-0.02em] text-foreground"> Embed essential context directly in the chart </h1> <p class="m-0 max-w-3xl text-[0.92rem] leading-[1.58] text-muted-foreground">For distribution outside the original context, use text annotation on charts to prevent misinterpretation and address missing surrounding explanation for readers encountering shared graphics on their own.</p> </div> <section aria-label="Guideline labels" class="grid gap-2 border-t border-border pt-3"> <div class="flex items-baseline justify-between gap-3"> <span class="font-mono text-[0.66rem] font-bold uppercase tracking-[0.04em] text-muted-foreground">
+labels
+</span> </div> <ul class="m-0 flex list-none flex-wrap items-center gap-1.5 p-0 gap-2" aria-label="Guideline labels"><li class="inline-flex min-h-6 items-center gap-1 rounded-[4px] border border-chip-border bg-chip px-1.5 py-0.5 font-mono text-[0.66rem] font-medium leading-[1.15] text-muted-foreground group/label" data-key="purpose-refine-0"><a class="text-[0.63rem] font-bold uppercase tracking-[0.04em] text-muted-foreground no-underline group-hover/label:underline group-hover/label:underline-offset-[0.16em] group-focus-within/label:underline group-focus-within/label:underline-offset-[0.16em]" data-filter-value="purpose" href="/guidelines/?label=purpose" title="Filter: purpose">purpose</a><span class="text-muted-foreground">:</span><a class="text-foreground no-underline group-hover/label:underline group-hover/label:underline-offset-[0.16em] group-focus-within/label:underline group-focus-within/label:underline-offset-[0.16em]" data-filter-value="purpose:refine" href="/guidelines/?label=purpose--refine" title="Filter: purpose:refine">refine</a></li><li class="inline-flex min-h-6 items-center gap-1 rounded-[4px] border border-chip-border bg-chip px-1.5 py-0.5 font-mono text-[0.66rem] font-medium leading-[1.15] text-muted-foreground group/label" data-key="basis-rhetorical-1"><a class="text-[0.63rem] font-bold uppercase tracking-[0.04em] text-muted-foreground no-underline group-hover/label:underline group-hover/label:underline-offset-[0.16em] group-focus-within/label:underline group-focus-within/label:underline-offset-[0.16em]" data-filter-value="basis" href="/guidelines/?label=basis" title="Filter: basis">basis</a><span class="text-muted-foreground">:</span><a class="text-foreground no-underline group-hover/label:underline group-hover/label:underline-offset-[0.16em] group-focus-within/label:underline group-focus-within/label:underline-offset-[0.16em]" data-filter-value="basis:rhetorical" href="/guidelines/?label=basis--rhetorical" title="Filter: basis:rhetorical">rhetorical</a></li><li class="inline-flex min-h-6 items-center gap-1 rounded-[4px] border border-chip-border bg-chip px-1.5 py-0.5 font-mono text-[0.66rem] font-medium leading-[1.15] text-muted-foreground group/label" data-key="task-distribute-2"><a class="text-[0.63rem] font-bold uppercase tracking-[0.04em] text-muted-foreground no-underline group-hover/label:underline group-hover/label:underline-offset-[0.16em] group-focus-within/label:underline group-focus-within/label:underline-offset-[0.16em]" data-filter-value="task" href="/guidelines/?label=task" title="Filter: task">task</a><span class="text-muted-foreground">:</span><a class="text-foreground no-underline group-hover/label:underline group-hover/label:underline-offset-[0.16em] group-focus-within/label:underline group-focus-within/label:underline-offset-[0.16em]" data-filter-value="task:distribute" href="/guidelines/?label=task--distribute" title="Filter: task:distribute">distribute</a></li><li class="inline-flex min-h-6 items-center gap-1 rounded-[4px] border border-chip-border bg-chip px-1.5 py-0.5 font-mono text-[0.66rem] font-medium leading-[1.15] text-muted-foreground group/label" data-key="quality-fidelity-3"><a class="text-[0.63rem] font-bold uppercase tracking-[0.04em] text-muted-foreground no-underline group-hover/label:underline group-hover/label:underline-offset-[0.16em] group-focus-within/label:underline group-focus-within/label:underline-offset-[0.16em]" data-filter-value="quality" href="/guidelines/?label=quality" title="Filter: quality">quality</a><span class="text-muted-foreground">:</span><a class="text-foreground no-underline group-hover/label:underline group-hover/label:underline-offset-[0.16em] group-focus-within/label:underline group-focus-within/label:underline-offset-[0.16em]" data-filter-value="quality:fidelity" href="/guidelines/?label=quality--fidelity" title="Filter: quality:fidelity">fidelity</a></li><li class="inline-flex min-h-6 items-center gap-1 rounded-[4px] border border-chip-border bg-chip px-1.5 py-0.5 font-mono text-[0.66rem] font-medium leading-[1.15] text-muted-foreground group/label" data-key="lever-text-annotation-4"><a class="text-[0.63rem] font-bold uppercase tracking-[0.04em] text-muted-foreground no-underline group-hover/label:underline group-hover/label:underline-offset-[0.16em] group-focus-within/label:underline group-focus-within/label:underline-offset-[0.16em]" data-filter-value="lever" href="/guidelines/?label=lever" title="Filter: lever">lever</a><span class="text-muted-foreground">:</span><a class="text-foreground no-underline group-hover/label:underline group-hover/label:underline-offset-[0.16em] group-focus-within/label:underline group-focus-within/label:underline-offset-[0.16em]" data-filter-value="lever:text-annotation" href="/guidelines/?label=lever--text-annotation" title="Filter: lever:text-annotation">text-annotation</a></li><li class="inline-flex min-h-6 items-center gap-1 rounded-[4px] border border-chip-border bg-chip px-1.5 py-0.5 font-mono text-[0.66rem] font-medium leading-[1.15] text-muted-foreground group/label" data-key="communication-context-5"><a class="text-[0.63rem] font-bold uppercase tracking-[0.04em] text-muted-foreground no-underline group-hover/label:underline group-hover/label:underline-offset-[0.16em] group-focus-within/label:underline group-focus-within/label:underline-offset-[0.16em]" data-filter-value="communication" href="/guidelines/?label=communication" title="Filter: communication">communication</a><span class="text-muted-foreground">:</span><a class="text-foreground no-underline group-hover/label:underline group-hover/label:underline-offset-[0.16em] group-focus-within/label:underline group-focus-within/label:underline-offset-[0.16em]" data-filter-value="communication:context" href="/guidelines/?label=communication--context" title="Filter: communication:context">context</a></li><li class="inline-flex min-h-6 items-center gap-1 rounded-[4px] border border-chip-border bg-chip px-1.5 py-0.5 font-mono text-[0.66rem] font-medium leading-[1.15] text-muted-foreground group/label" data-key="component-annotation:use-6"><a class="text-[0.63rem] font-bold uppercase tracking-[0.04em] text-muted-foreground no-underline group-hover/label:underline group-hover/label:underline-offset-[0.16em] group-focus-within/label:underline group-focus-within/label:underline-offset-[0.16em]" data-filter-value="component" href="/guidelines/?label=component" title="Filter: component">component</a><span class="text-muted-foreground">:</span><a class="text-foreground no-underline group-hover/label:underline group-hover/label:underline-offset-[0.16em] group-focus-within/label:underline group-focus-within/label:underline-offset-[0.16em]" data-filter-value="component:annotation:use" href="/guidelines/?label=component--annotation--use" title="Filter: component:annotation:use">annotation:use</a></li></ul> </section> <div class="grid gap-2 pt-px"> <section class="grid gap-[var(--ccui-detail-body-gap,0.09rem)]"> <div class="grid gap-[var(--ccui-detail-header-gap,0.2rem)]"> <p class="m-0 font-mono text-[0.58rem] font-semibold leading-[0.98] tracking-[0.007em] text-muted-foreground/80 lowercase"> advice </p> <h2 class="m-0 text-balance font-display text-[clamp(1.4rem,2.2vw,1.82rem)] font-semibold leading-[0.99] tracking-[-0.018em] text-foreground"> In-chart explanations </h2> </div> <div class="guideline-article-section__body"><p>Embed essential explanation directly in the chart when it may be seen without its original surrounding text. For example, add annotations, direct labels, or a brief explanatory box inside the chart, and place that text according to the chart type and platform.</p></div> </section><section class="grid gap-[var(--ccui-detail-body-gap,0.09rem)]"> <div class="grid gap-[var(--ccui-detail-header-gap,0.2rem)]"> <p class="m-0 font-mono text-[0.58rem] font-semibold leading-[0.98] tracking-[0.007em] text-muted-foreground/80 lowercase"> reason </p> <h2 class="m-0 text-balance font-display text-[clamp(1.4rem,2.2vw,1.82rem)] font-semibold leading-[0.99] tracking-[-0.018em] text-foreground"> Why embedded context helps </h2> </div> <div class="guideline-article-section__body"><p>Charts are often reposted, cropped, or screenshotted without the article or caption that originally explained them. Explanations built into the visual stay with the chart, so the intended message remains available when readers see the chart alone.</p>
+<p><strong>Mechanism:</strong> In-chart explanations keep the key interpretation attached to the graphic itself, which reduces the chance that readers infer the wrong message from a context-stripped chart.</p>
+<p><strong>Evidence:</strong> Scientific American embeds explanations directly in charts through annotations, labels, and explanatory boxes to avoid misinterpretation when charts are shared out of context, and its style guidance varies placement by chart type and platform (<a class="citation" href="#ref-gregory_data_2024" data-citekey="gregory_data_2024" title="Gregory, K., Koesten, L., Schuster, R., Möller, T., &#x26; Davies, S. (2024). Data Journeys in Popular Science: Producing Climate Change and COVID-19 Data Visualizations at Scientific American. Harvard Data Science Review, 6(2). https://doi.org/10.1162/99608f92.141c99cf">Gregory et al., 2024</a>).</p></div> </section><section class="grid gap-[var(--ccui-detail-body-gap,0.09rem)]"> <div class="grid gap-[var(--ccui-detail-header-gap,0.2rem)]"> <p class="m-0 font-mono text-[0.58rem] font-semibold leading-[0.98] tracking-[0.007em] text-muted-foreground/80 lowercase"> context </p> <h2 class="m-0 text-balance font-display text-[clamp(1.4rem,2.2vw,1.82rem)] font-semibold leading-[0.99] tracking-[-0.018em] text-foreground"> Where this applies </h2> </div> <div class="guideline-article-section__body"><ul>
+<li><strong>User Goal:</strong> Preserve the intended message when the chart is shared beyond its original presentation.</li>
+<li><strong>Task:</strong> Distribute or publish a chart that may be reposted or viewed independently.</li>
+<li><strong>Chart Setting:</strong> The chart may appear on social media or other contexts where surrounding article text will not reliably travel with it.</li>
+<li><strong>Audience:</strong> Readers may encounter the chart alone, without the original explanation.</li>
+<li><strong>Success Criterion:</strong> The main interpretation is still visible on the chart itself.</li>
+</ul></div> </section><section class="grid gap-[var(--ccui-detail-body-gap,0.09rem)]"> <div class="grid gap-[var(--ccui-detail-header-gap,0.2rem)]"> <p class="m-0 font-mono text-[0.58rem] font-semibold leading-[0.98] tracking-[0.007em] text-muted-foreground/80 lowercase"> exceptions </p> <h2 class="m-0 text-balance font-display text-[clamp(1.4rem,2.2vw,1.82rem)] font-semibold leading-[0.99] tracking-[-0.018em] text-foreground"> When not to rely on this rule </h2> </div> <div class="guideline-article-section__body"><p><strong>Break it when:</strong> The chart will reliably remain paired with its full surrounding explanation in the same view. <strong>Why:</strong> This rule targets loss of context during redistribution.</p></div> </section><section class="grid gap-[var(--ccui-detail-body-gap,0.09rem)]"> <div class="grid gap-[var(--ccui-detail-header-gap,0.2rem)]"> <p class="m-0 font-mono text-[0.58rem] font-semibold leading-[0.98] tracking-[0.007em] text-muted-foreground/80 lowercase"> costs </p> <h2 class="m-0 text-balance font-display text-[clamp(1.4rem,2.2vw,1.82rem)] font-semibold leading-[0.99] tracking-[-0.018em] text-foreground"> Tradeoffs of embedded context </h2> </div> <div class="guideline-article-section__body"><p><strong>Sacrifice:</strong> Some chart space is used for explanatory text.
+<strong>Risk:</strong> Annotation placement may need to change across chart types and platforms.
+<strong>Mitigation:</strong> Adjust the explanation placement for the specific chart type and platform where the chart will appear.</p></div> </section><section class="grid gap-[var(--ccui-detail-body-gap,0.09rem)]"> <div class="grid gap-[var(--ccui-detail-header-gap,0.2rem)]"> <p class="m-0 font-mono text-[0.58rem] font-semibold leading-[0.98] tracking-[0.007em] text-muted-foreground/80 lowercase"> mistakes </p> <h2 class="m-0 text-balance font-display text-[clamp(1.4rem,2.2vw,1.82rem)] font-semibold leading-[0.99] tracking-[-0.018em] text-foreground"> Common failure mode </h2> </div> <div class="guideline-article-section__body"><p><strong>Mistake:</strong> Leave the key explanation only in surrounding article text or post copy. <strong>Why it fails:</strong> The chart can be shared without that context, leaving readers to interpret it on their own.</p></div> </section><section class="grid gap-[var(--ccui-detail-body-gap,0.09rem)]"> <div class="grid gap-[var(--ccui-detail-header-gap,0.2rem)]"> <p class="m-0 font-mono text-[0.58rem] font-semibold leading-[0.98] tracking-[0.007em] text-muted-foreground/80 lowercase"> check </p> <h2 class="m-0 text-balance font-display text-[clamp(1.4rem,2.2vw,1.82rem)] font-semibold leading-[0.99] tracking-[-0.018em] text-foreground"> How to test it </h2> </div> <div class="guideline-article-section__body"><p><strong>Failure Sign:</strong> The chart’s meaning depends on adjacent text that is not inside the graphic.
+<strong>Quick Check:</strong> View the chart by itself, as if it were a screenshot or repost, and check whether the needed explanation is still visible.
+<strong>Stronger Test:</strong> Review the chart in each intended platform format to confirm the explanation remains attached and readable.</p></div> </section><section class="grid gap-[var(--ccui-detail-body-gap,0.09rem)]"> <div class="grid gap-[var(--ccui-detail-header-gap,0.2rem)]"> <p class="m-0 font-mono text-[0.58rem] font-semibold leading-[0.98] tracking-[0.007em] text-muted-foreground/80 lowercase"> fix </p> <h2 class="m-0 text-balance font-display text-[clamp(1.4rem,2.2vw,1.82rem)] font-semibold leading-[0.99] tracking-[-0.018em] text-foreground"> What to change </h2> </div> <div class="guideline-article-section__body"><ul>
+<li>Move the key explanation from surrounding text into the chart itself.</li>
+<li>Add an annotation at the point where readers need interpretive help.</li>
+<li>Replace indirect explanation with direct labels on the relevant marks when possible.</li>
+<li>Add a brief explanatory box inside the chart when labels alone cannot carry the message.</li>
+</ul></div> </section> </div> <section class="grid gap-2 pt-2"> <div class="flex items-baseline justify-between gap-3"> <span class="font-mono text-[0.66rem] font-bold uppercase tracking-[0.04em] text-muted-foreground">
+references
+</span> </div> <div class="bibliography"><div class="csl-bib-body">
+  <div id="ref-gregory_data_2024" data-csl-entry-id="gregory_data_2024" class="csl-entry">Gregory, K., Koesten, L., Schuster, R., Möller, T., &amp; Davies, S. (2024). Data Journeys in Popular Science: Producing Climate Change and COVID-19 Data Visualizations at Scientific American. <i>Harvard Data Science Review</i>, <i>6</i>(2). <a href="https://doi.org/10.1162/99608f92.141c99cf" rel="noreferrer" target="_blank">https://doi.org/10.1162/99608f92.141c99cf</a></div>
+</div></div> <details class="mt-4 grid gap-0"> <summary class="flex min-h-8 cursor-pointer items-center px-0 font-mono text-[0.75rem] font-bold tracking-[0.02em] text-foreground">
+BibTeX
+</summary> <pre class="mt-1 overflow-x-auto rounded-sm border border-border bg-muted p-4"><code>@article{gregory_data_2024,
+ author = {Gregory, Kathleen and Koesten, Laura and Schuster, Regina and Möller, Torsten and Davies, Sarah},
+ doi = {10.1162/99608f92.141c99cf},
+ issn = {2644-2353,},
+ journal = {Harvard Data Science Review},
+ language = {en},
+ month = {April},
+ note = {Publisher: The MIT Press},
+ number = {2},
+ shorttitle = {Data {Journeys} in {Popular} {Science}},
+ title = {Data {Journeys} in {Popular} {Science}: {Producing} {Climate} {Change} and {COVID}-19 {Data} {Visualizations} at {Scientific} {American}},
+ url = {https://hdsr.mitpress.mit.edu/pub/jme9l45q/release/2},
+ urldate = {2025-10-15},
+ volume = {6},
+ year = {2024}
+}</code></pre> </details> </section> </div> </div>  </div> <footer class="sl-flex astro-wdpfz6mj"> <div class="meta sl-flex astro-wdpfz6mj">   </div>   </footer> </div> </div>  </main> </div> </div> </div> </div> </body></html>
